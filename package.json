@@ -9,6 +9,6 @@
   "author": "Abel Masila",
   "license": "ISC",
   "dependencies": {
-    "mongodb": "^3.0.7"
+    "mongodb": "^2.2.5"
   }
 }
