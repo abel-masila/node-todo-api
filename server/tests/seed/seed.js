@@ -2,22 +2,26 @@ const {Todo}= require('./../../models/todo');
 const {User}=require('./../../models/user');
 const {ObjectID} =require('mongodb');
 const jwt=require('jsonwebtoken');
+
+const userOneId=new ObjectID();
+const userTwoId=new ObjectID();
 //add seed data for todos
 const todos=[
     {
         _id: new ObjectID(),
         text:"First Todo",
         completed:true,
-        completedAt: 333
+        completedAt: 333,
+        _creator: userOneId
     },{
         _id: new ObjectID(),
-        text:"Second Todo"
+        text:"Second Todo",
+        _creator:userTwoId
     }
 ];
 
 //add seed data for user
-const userOneId=new ObjectID();
-const userTwoId=new ObjectID();
+
 const users=[
     {
         _id:userOneId,
