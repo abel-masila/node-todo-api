@@ -93,6 +93,15 @@ UserSchema.methods.toJSON = function () {
       });
   };
 
+  UserSchema.methods.removeToken=function(token){
+    const user=this;
+    return user.update({
+        $pull:{
+            tokens:{token}
+        }
+    });
+  };
+
   UserSchema.pre('save',function(next){
     const user=this;
     if(user.isModified('password')){
